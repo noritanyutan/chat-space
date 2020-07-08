@@ -6,7 +6,7 @@
 |password|string|null: false|
 |nickname|string|null: false|
 ### Association
-- has_many :members
+- has_many :groups
 - has_many :comments
 
 
@@ -15,8 +15,8 @@
 |------|----|-------|
 |text|text|null: false|
 ### Association
-- has_many :members_groups
-- has_many  :members,  through:  :members_groups
+- has_many :comments
+- has_many  :users,  through:  :users_groups
 
 ## users_groupsテーブル
 |Column|Type|Options|
@@ -34,5 +34,5 @@
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :member
+- belongs_to :group
 - belongs_to :user
