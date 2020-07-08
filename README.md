@@ -7,15 +7,16 @@
 |nickname|string|null: false|
 ### Association
 - has_many :groups
-- has_many :comments
+- has_many :comments, through: :users_groups
 
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|name|string|null: false|
 ### Association
 - has_many :comments
+- has_many：users_groups
 - has_many  :users,  through:  :users_groups
 
 ## users_groupsテーブル
@@ -30,7 +31,7 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|image-|text|--------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
