@@ -1,0 +1,34 @@
+.main-chat
+  .group-info
+    .group-info__groupName 
+      test
+      .group-info__groupMember 
+        Member:masa
+    .group-info__groupEdit 
+      =link_to "#" do
+        edit
+  .message-list
+    .message-list__listBox
+      .message-list__listBox__messageInfo
+        .message-list__listBox__messageInfo__userName
+          masa
+        .message-list__listBox__messageInfo__date
+          2020年07月13日 08時32分
+      .message-list__listBox__message
+        おはよう
+    .message-list__listBox__messageInfo
+      .message-list__listBox__messageInfo__userName
+        masa
+      .message-list__listBox__messageInfo__date
+        2020年07月13日 12時32分
+    .message-list__listBox__message
+      今日の夜も雨です
+  .message-form
+    .message-form__box
+      %input.message-form__box__content{:placeholder => "Type text message"}
+      .message-form__box__pic
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file",class: 'hidden'}
+    .message-form__submit
+      send
