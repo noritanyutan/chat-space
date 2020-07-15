@@ -1,0 +1,17 @@
+.message-list__listBox
+  .message-list__listBox__messageInfo
+    .message-list__listBox__messageInfo__userName
+      = message.user.name
+    .message-list__listBox__messageInfo__date
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .message-list__listBox__message
+    - if message.content.present?
+      .message-list__listBox__messageInfo
+      = message.content
+    = image_tag message.image.url, class: 'Message__image' if message.image.present?
+    -#   .message-list__listBox__messageInfo__userName
+    -#     masa
+    -#   .message-list__listBox__messageInfo__date
+    -#     2020年07月13日 12時32分
+    -# .message-list__listBox__message
+    -#   今日の夜も雨です
